@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.Terrain Making.iml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../:\Unity projects personal\Terrain Making\.idea\.idea.Terrain Making\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
