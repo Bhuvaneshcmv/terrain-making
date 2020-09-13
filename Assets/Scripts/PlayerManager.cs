@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
     float rotationX = 0;
+    private float ySpeed = 10;
     void Start()
     {
         moveSpeed = 10;
@@ -37,9 +38,16 @@ public class PlayerManager : MonoBehaviour
         frontValue = Input.GetAxis("Vertical");
         sideValue = Input.GetAxis("Horizontal");
     }
+
     void MovePlayer()
     {
-        controller.Move(this.transform.TransformDirection(new Vector3(sideValue, 0, frontValue )* moveSpeed * Time.deltaTime));
+        if (!controller.isGrounded)
+        {
+            ySpeed = -100;
+            Debug.Log("Grounded");
+        }
+        else ySpeed = 0;
+        controller.Move(this.transform.TransformDirection(new Vector3(sideValue,ySpeed, frontValue )* moveSpeed * Time.deltaTime));
     }
     void LookAround()
     {
